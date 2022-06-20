@@ -11,6 +11,28 @@
     <link rel="stylesheet" href="index.css">
 
     <title>治癒人心的貓咪電影</title>
+    <script>
+        window.onload = function() {
+            var Input = document.getElementById("myInput");
+            var messageBox = document.getElementById("messageBox");
+
+            function post() {
+                if (Input.value) {
+                    var oTime = document.createElement("div");
+                    oTime.className = "time";
+                    var myDate = new Date();
+                    oTime.innerHTML = myDate.toLocaleString();
+                    messageBox.appendChild(oTime);
+
+                    var message = document.createElement("div");
+                    message.className = "messageX";
+                    message.innerHTML = Input.value;
+                    Input.value = "";
+                    messageBox.appendChild(message);
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -47,9 +69,13 @@
                             <ul>
                                 <li><a href="https://www.youtube.com/watch?v=MysOnSXk7sA">電影解說</a></li>
                                 <li>心得：這部電影治癒人心，慢步調的日子，在到處都是貓咪的島上，只要走幾步就能擼貓，根本就是天堂，完美詮釋了我理想中的生活。</li>
-                                <P>
-                                    <textarea>123</textarea>
-                                </P>
+                                <div>
+                                    <div>使用者留言</div>
+                                    <textarea id="messageBox"></textarea>
+                                    <div>
+                                        <input id="myInput" type="text" placeholder="請輸入留言類容"><button onclick="post()">提交</button>
+                                    </div>
+                                </div>
                             </ul>
                             </table>
                         </div>
@@ -62,9 +88,13 @@
                             <ul>
                                 <li><a href="https://www.youtube.com/watch?v=OrlEi693gLs">電影解說</a></li>
                                 <li>心得：這部感人的電影，主角與貓的旅程讓人嚮往，人生能有貓咪陪伴是幸福的，希望能世上的貓咪和愛貓咪的人都能幸福。</li>
-                                <P>
-                                    <textarea></textarea>
-                                </P>
+                                <div>
+                                    <div>使用者留言</div>
+                                    <textarea id="messageBox"></textarea>
+                                    <div>
+                                        <input id="myInput" type="text" placeholder="請輸入留言類容"><button onclick="post()">提交</button>
+                                    </div>
+                                </div>
                             </ul>
                             </table>
                         </div>
